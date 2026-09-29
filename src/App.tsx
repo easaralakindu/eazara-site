@@ -67,20 +67,77 @@ function App() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#070707] text-white">
       <section id="home" className="relative min-h-screen overflow-hidden noise">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 h-full w-full object-cover object-[67%_center]"
-          src="/videos/eazara-lion.mp4"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,5,.95)_0%,rgba(5,5,5,.82)_31%,rgba(5,5,5,.34)_58%,rgba(5,5,5,.05)_78%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.16)_0%,rgba(0,0,0,.04)_55%,#070707_100%)]" />
-        <div className="absolute inset-0 grid-lines opacity-40" />
+        {/* LION VIDEO */}
+<div
+  className="
+    relative
+    h-[55svh]
+    min-h-[400px]
+    w-full
+    overflow-hidden
+    bg-[#070707]
 
-        <nav className="relative z-30 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
+    md:absolute
+    md:inset-0
+    md:h-full
+    md:min-h-0
+  "
+>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    className="
+      h-full
+      w-full
+
+      object-contain
+      object-top
+
+      md:object-cover
+      md:object-[67%_center]
+    "
+  >
+    <source src="/videos/eazara-lion.webm" type="video/webm" />
+    <source src="/videos/eazara-lion.mp4" type="video/mp4" />
+  </video>
+
+  <div
+    className="
+      absolute
+      inset-0
+      bg-[linear-gradient(180deg,rgba(7,7,7,0)_52%,rgba(7,7,7,.12)_67%,rgba(7,7,7,.65)_85%,#070707_100%)]
+      md:hidden
+    "
+  />
+</div>
+
+{/* DESKTOP OVERLAYS */}
+<div
+  className="
+    absolute
+    inset-0
+    hidden
+    bg-[linear-gradient(90deg,rgba(5,5,5,.95)_0%,rgba(5,5,5,.82)_31%,rgba(5,5,5,.34)_58%,rgba(5,5,5,.05)_78%)]
+    md:block
+  "
+/>
+
+<div
+  className="
+    absolute
+    inset-0
+    hidden
+    bg-[linear-gradient(180deg,rgba(0,0,0,.16)_0%,rgba(0,0,0,.04)_55%,#070707_100%)]
+    md:block
+  "
+/>
+
+<div className="absolute inset-0 grid-lines opacity-25 md:opacity-40" />
+
+        <nav className="absolute left-0 right-0 top-0 z-30 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
           <a href="#home" className="flex items-center gap-3 font-semibold tracking-[-0.02em]">
             <EazaraMark />
             <span className="text-lg">Eazara</span>
@@ -115,7 +172,26 @@ function App() {
           </div>
         )}
 
-        <div className="relative z-20 mx-auto flex min-h-[calc(100vh-90px)] max-w-7xl items-center px-6 pb-20 pt-10 lg:px-10">
+        <div
+  className="
+    relative
+    z-20
+    mx-auto
+    -mt-10
+    max-w-7xl
+    px-6
+    pb-16
+
+    md:mt-0
+    md:flex
+    md:min-h-[calc(100vh-90px)]
+    md:items-center
+    md:pb-20
+    md:pt-10
+
+    lg:px-10
+  "
+>
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 16 }}

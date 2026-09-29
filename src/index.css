@@ -1,17 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+/* =========================
+   ROOT
+   ========================= */
+
 :root {
   color-scheme: dark;
   font-family: 'Inter', system-ui, sans-serif;
+
   background: #070707;
   color: white;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
+
+/* =========================
+   PAGE
+   ========================= */
 
 html {
   scroll-behavior: smooth;
@@ -22,65 +35,556 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  overflow-x: hidden;
+
   background:
-    radial-gradient(1100px circle at 80% 8%, rgba(224, 163, 60, 0.08), transparent 55%),
+    radial-gradient(
+      1100px circle at 80% 8%,
+      rgba(224, 163, 60, 0.08),
+      transparent 55%
+    ),
     #070707;
 }
 
-::selection {
-  background: rgba(240,178,74,.25);
+* {
+  box-sizing: border-box;
 }
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(240, 178, 74, 0.25);
+}
+
+
+/* =========================
+   GLASS
+   ========================= */
 
 .liquid-glass {
-  background: linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.055),
+      rgba(255,255,255,.015)
+    );
+
   backdrop-filter: blur(18px) saturate(130%);
   -webkit-backdrop-filter: blur(18px) saturate(130%);
+
   border: 1px solid rgba(255,255,255,.1);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 18px 60px rgba(0,0,0,.28);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.09),
+    0 18px 60px rgba(0,0,0,.28);
 }
 
+
+/* =========================
+   GOLD TEXT
+   ========================= */
+
 .gold-text {
-  background: linear-gradient(90deg, #ffffff 0%, #f7e6c1 22%, #e8aa3f 52%, #fff4d7 78%, #ffffff 100%);
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #f7e6c1 22%,
+      #e8aa3f 52%,
+      #fff4d7 78%,
+      #ffffff 100%
+    );
+
   background-size: 220% auto;
+
   -webkit-background-clip: text;
   background-clip: text;
+
   color: transparent;
+
   animation: shimmer 8s linear infinite;
 }
 
 @keyframes shimmer {
-  0% { background-position: 220% center; }
-  100% { background-position: -220% center; }
+  0% {
+    background-position: 220% center;
+  }
+
+  100% {
+    background-position: -220% center;
+  }
 }
+
+
+/* =========================
+   NOISE
+   ========================= */
 
 .noise::after {
   content: '';
+
   position: absolute;
   inset: 0;
+
   pointer-events: none;
+
   opacity: .11;
   mix-blend-mode: soft-light;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
 }
+
+
+/* =========================
+   GRID
+   ========================= */
 
 .grid-lines {
   background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    linear-gradient(
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    );
+
   background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 85%);
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.8),
+      transparent 85%
+    );
 }
+
+
+/* =========================
+   MARQUEE
+   ========================= */
 
 .marquee {
   animation: marquee 26s linear infinite;
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
+
+/* ==================================================
+   MOBILE HERO
+   ================================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    background: #070707;
+  }
+
+
+  /* MAIN HERO */
+
+  .hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 100svh;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #070707;
+  }
+
+
+  /* =================================
+     LION IMAGE AREA
+     ================================= */
+
+  .hero-lion {
+    position: relative;
+
+    width: 100%;
+
+    /*
+      This makes the lion take the
+      upper half of the mobile screen.
+    */
+    height: 56svh;
+
+    min-height: 430px;
+    max-height: 650px;
+
+    flex-shrink: 0;
+
+    /*
+      VERY IMPORTANT:
+
+      contain = show the whole lion
+      instead of cropping it.
+    */
+
+    background-size: contain !important;
+
+    background-repeat: no-repeat !important;
+
+    /*
+      Position the lion slightly lower
+      so the head isn't too close
+      to the navigation.
+    */
+
+    background-position:
+      center 35px !important;
+
+    background-color: #070707;
+  }
+
+
+  /*
+    Smooth fade from lion image
+    into the content section.
+  */
+
+  .hero-lion::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        to bottom,
+
+        rgba(7,7,7,0) 58%,
+
+        rgba(7,7,7,.15) 68%,
+
+        rgba(7,7,7,.58) 82%,
+
+        #070707 100%
+      );
+  }
+
+
+  /* =================================
+     HERO CONTENT
+     ================================= */
+
+  .hero-content {
+    position: relative !important;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+
+    transform: none !important;
+
+    width: 100%;
+
+    max-width: none;
+
+    z-index: 5;
+
+    /*
+      Pull text slightly over
+      the bottom of the lion.
+    */
+
+    margin-top: -55px;
+
+    padding:
+
+      0
+      24px
+      54px;
+  }
+
+
+  /* =================================
+     SMALL TOP PILL
+     ================================= */
+
+  .hero-pill {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+
+    max-width: 100%;
+
+    margin-bottom: 26px;
+
+    padding: 9px 14px;
+
+    border-radius: 999px;
+
+    border:
+      1px solid rgba(255,255,255,.14);
+
+    background:
+      rgba(10,10,10,.55);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    color:
+      rgba(255,255,255,.68);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+  }
+
+
+  /* =================================
+     EAZARA
+     ================================= */
+
+  .hero-content h1 {
+    margin: 0 0 13px;
+
+    font-size:
+      clamp(
+        62px,
+        18vw,
+        86px
+      );
+
+    line-height: .9;
+
+    letter-spacing: -.055em;
+
+    font-weight: 700;
+
+    color: white;
+  }
+
+
+  /* =================================
+     BUILD WHAT MATTERS
+     ================================= */
+
+  .hero-content h2 {
+    margin: 0 0 28px;
+
+    font-size:
+      clamp(
+        33px,
+        8.8vw,
+        46px
+      );
+
+    line-height: 1.04;
+
+    letter-spacing: -.04em;
+
+    font-weight: 400;
+
+    color: white;
+  }
+
+
+  .hero-content h2 strong,
+  .hero-content h2 span:first-child {
+    color: #e9b85e;
+
+    font-weight: 500;
+  }
+
+
+  /* =================================
+     DESCRIPTION
+     ================================= */
+
+  .hero-content p {
+    max-width: 520px;
+
+    margin:
+      0
+      0
+      31px;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+
+    color:
+      rgba(255,255,255,.62);
+  }
+
+
+  /* =================================
+     BUTTONS
+     ================================= */
+
+  .hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    gap: 12px;
+  }
+
+
+  .hero-buttons a,
+  .hero-buttons button {
+    min-height: 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+      0
+      21px;
+
+    border-radius: 999px;
+
+    white-space: nowrap;
+
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+
+  .primary-btn {
+    flex: 1.1;
+
+    background: white;
+
+    color: #090909;
+  }
+
+
+  .secondary-btn {
+    flex: .9;
+
+    color: white;
+
+    border:
+      1px solid rgba(255,255,255,.18);
+
+    background:
+      rgba(255,255,255,.035);
+  }
+
+
+}
+
+
+/* ==================================================
+   VERY SMALL PHONES
+   ================================================== */
+
+@media (max-width: 390px) {
+
+  .hero-lion {
+    height: 52svh;
+
+    min-height: 390px;
+
+    background-position:
+      center 40px !important;
+  }
+
+
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    margin-top: -40px;
+  }
+
+
+  .hero-pill {
+    font-size: 10.5px;
+
+    padding:
+      8px
+      11px;
+  }
+
+
+  .hero-content h1 {
+    font-size:
+      clamp(
+        56px,
+        18vw,
+        72px
+      );
+  }
+
+
+  .hero-content h2 {
+    font-size:
+      clamp(
+        30px,
+        8.5vw,
+        38px
+      );
+  }
+
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .hero-buttons a,
+  .hero-buttons button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .gold-text, .marquee { animation: none; }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .gold-text,
+  .marquee {
+    animation: none;
+  }
+
 }
