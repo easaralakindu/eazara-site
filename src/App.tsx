@@ -71,8 +71,7 @@ function App() {
 <div
   className="
     relative
-    h-[55svh]
-    min-h-[400px]
+    aspect-video
     w-full
     overflow-hidden
     bg-[#070707]
@@ -80,29 +79,29 @@ function App() {
     md:absolute
     md:inset-0
     md:h-full
-    md:min-h-0
+    md:aspect-auto
   "
 >
   <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="auto"
-    className="
-      h-full
-      w-full
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  className="
+    h-full
+    w-full
 
-      object-contain
-      object-top
+    object-contain
+    object-center
 
-      md:object-cover
-      md:object-[67%_center]
-    "
-  >
-    <source src="/videos/eazara-lion.webm" type="video/webm" />
-    <source src="/videos/eazara-lion.mp4" type="video/mp4" />
-  </video>
+    md:object-cover
+    md:object-[67%_center]
+  "
+>
+  <source src="/videos/eazara-lion.webm" type="video/webm" />
+  <source src="/videos/eazara-lion.mp4" type="video/mp4" />
+</video>
 
   <div
     className="
@@ -177,7 +176,7 @@ function App() {
     relative
     z-20
     mx-auto
-    -mt-10
+    -mt-6
     max-w-7xl
     px-6
     pb-16
@@ -192,6 +191,14 @@ function App() {
     lg:px-10
   "
 >
+  <div
+  className="
+    absolute
+    inset-0
+    bg-[linear-gradient(180deg,rgba(7,7,7,0)_55%,rgba(7,7,7,.05)_68%,rgba(7,7,7,.45)_84%,#070707_100%)]
+    md:hidden
+  "
+/>
           <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
