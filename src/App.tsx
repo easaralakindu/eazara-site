@@ -82,7 +82,7 @@ function App() {
     md:aspect-auto
   "
 >
-  <video
+<video
   autoPlay
   loop
   muted
@@ -91,7 +91,6 @@ function App() {
   className="
     h-full
     w-full
-
     object-contain
     object-center
 
@@ -102,6 +101,57 @@ function App() {
   <source src="/videos/eazara-lion.webm" type="video/webm" />
   <source src="/videos/eazara-lion.mp4" type="video/mp4" />
 </video>
+
+{/* MOBILE FADE */}
+<div
+  className="
+    absolute
+    inset-0
+    bg-[linear-gradient(180deg,rgba(7,7,7,0)_50%,rgba(7,7,7,.08)_65%,rgba(7,7,7,.68)_86%,#070707_100%)]
+    md:hidden
+  "
+/>
+
+{/* MOBILE TITLE */}
+<div
+  className="
+    absolute
+    bottom-8
+    left-6
+    right-6
+    z-20
+    md:hidden
+  "
+>
+  <motion.h1
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: .25, duration: .8 }}
+    className="
+      text-[3.7rem]
+      font-semibold
+      leading-[.88]
+      tracking-[-0.06em]
+      text-white
+    "
+  >
+    Eazara
+
+    <span
+  className="
+    gold-text
+    mt-3
+    block
+    text-[.44em]
+    font-medium
+    leading-[1.05]
+    tracking-[-0.035em]
+  "
+>
+  Build what matters.
+</span>
+  </motion.h1>
+</div>
 
   <div
     className="
@@ -176,7 +226,7 @@ function App() {
     relative
     z-20
     mx-auto
-    -mt-6
+    -mt-3
     max-w-7xl
     px-6
     pb-16
@@ -211,16 +261,37 @@ function App() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: .25, duration: .9, ease: [0.22,1,0.36,1] }}
-              className="text-6xl font-semibold leading-[.88] tracking-[-0.06em] sm:text-7xl md:text-8xl lg:text-[7.4rem]"
-            >
-              Eazara
-              <span className="gold-text mt-3 block text-[.48em] font-medium leading-[1.03] tracking-[-0.035em]">
-                Build what matters.
-              </span>
-            </motion.h1>
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: .25, duration: .9, ease: [0.22,1,0.36,1] }}
+  className="
+    hidden
+    font-semibold
+    leading-[.88]
+    tracking-[-0.06em]
+
+    md:block
+    md:text-8xl
+
+    lg:text-[7.4rem]
+  "
+>
+  Eazara
+
+  <span
+    className="
+      gold-text
+      mt-3
+      block
+      text-[.48em]
+      font-medium
+      leading-[1.03]
+      tracking-[-0.035em]
+    "
+  >
+    Build what matters.
+  </span>
+</motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
