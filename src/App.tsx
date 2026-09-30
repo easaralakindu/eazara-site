@@ -169,7 +169,7 @@ function App() {
     absolute
     inset-0
     hidden
-    bg-[linear-gradient(90deg,rgba(5,5,5,.95)_0%,rgba(5,5,5,.82)_31%,rgba(5,5,5,.34)_58%,rgba(5,5,5,.05)_78%)]
+    bg-[linear-gradient(90deg,rgba(5,5,5,.82)_0%,rgba(5,5,5,.62)_28%,rgba(5,5,5,.20)_52%,rgba(5,5,5,.02)_72%)]
     md:block
   "
 />
@@ -179,7 +179,7 @@ function App() {
     absolute
     inset-0
     hidden
-    bg-[linear-gradient(180deg,rgba(0,0,0,.16)_0%,rgba(0,0,0,.04)_55%,#070707_100%)]
+    bg-[linear-gradient(180deg,rgba(0,0,0,.08)_0%,rgba(0,0,0,.02)_60%,rgba(7,7,7,.82)_100%)]
     md:block
   "
 />
@@ -249,7 +249,7 @@ function App() {
     md:hidden
   "
 />
-          <div className="max-w-2xl">
+          <div className="w-full md:max-w-xl">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -271,9 +271,9 @@ function App() {
     tracking-[-0.06em]
 
     md:block
-    md:text-8xl
+    md:text-7xl
 
-    lg:text-[7.4rem]
+    lg:text-[6.5rem]
   "
 >
   Eazara
@@ -297,7 +297,14 @@ function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: .5, duration: .8 }}
-              className="mt-8 max-w-xl text-base leading-7 text-white/60 sm:text-lg"
+              className="
+  mt-8
+  max-w-lg
+  text-base
+  leading-7
+  text-white/60
+  sm:text-lg
+"
             >
               Eazara turns ideas, everyday problems, and ambitious possibilities into thoughtful digital products and software experiences.
             </motion.p>
