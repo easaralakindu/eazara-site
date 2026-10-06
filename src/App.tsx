@@ -503,8 +503,8 @@ function App() {
             <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-white/50 sm:text-base">
               Bring the problem, the rough idea, or the ambitious version. Eazara can help shape what comes next.
             </p>
-            <a href="mailto:hello@eazara.com" className="group mt-9 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#f3f3f3]">
-              hello@eazara.com <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            <a href="mailto:easaralakindu7@gmail.com" className="group mt-9 inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#f3f3f3]">
+              easaralakindu7@gmail.com <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </motion.div>
